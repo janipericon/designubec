@@ -43,6 +43,7 @@ function designubec_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'designubec' ),
+		'seconday' => __( 'Secondary Menu', 'designubec' )
 	) );
 
 	// Enable support for Post Formats.
@@ -84,14 +85,79 @@ function designubec_widgets_init() {
 add_action( 'widgets_init', 'designubec_widgets_init' );
 
 /**
+ * Register Post Type Event Year
+ */
+
+function designubec_post_type_init() {
+
+	// Register Post Type Events
+	$args_event = array(
+		'labels' => array(
+			'name' => 'Events',
+			'singular_name' => 'Event',
+			'add_new' => 'Add Event',
+			'add_new_item' => 'Add New Event',
+			'edit' => 'Edit',
+			'edit_item' => 'Edit Event',
+			'new_item' => 'New Event',
+			'view' => 'View Event',
+			'view_item' => 'View Event',
+			'search_items' => 'Search Event',
+			'not_found' => 'No Event found',
+			'not_found_in_trash' => 'No Events in the Trash',
+		),
+		'query_var' => 'designubecevent',
+		'public' => true,
+		'hierarchical' => true,
+		'menu_position' => 5,
+		'has_archive' => true,
+		'show_ui' => true,
+		'menu_icon' => 'dashicons-calendar',
+		'rewrite' => array('slug' => 'events'),
+		'supports' => array( 'title', 'editor', 'post-thumbnails', 'thumbnail', 'page-attributes', 'revisions'),
+		'description' => "Designubec Event lists"
+	);
+
+	register_post_type('designubec_events', $args_event);
+
+}
+add_action( 'init', 'designubec_post_type_init' );
+
+/**
+ * Add Jquery script.
+ */
+function designubec_jquery() { ?>
+		<script>
+			var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
+			if(!oldieCheck) {
+				document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"><\/script>');
+			} else {
+				document.write('<script src="//code.jquery.com/jquery-1.11.0.min.js"><\/script>');
+				document.write('<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"><\/script>');
+			}
+		</script>
+		<script>
+			if(!window.jQuery) {
+				if(!oldieCheck) {
+					document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-2.1.0.min.js"><\/script>');
+				} else {
+					document.write('<script src="<?php bloginfo('template_url'); ?>/js/libs/jquery-1.11.0.min.js"><\/script>');
+				}
+			}
+		</script>
+<?php } 
+add_action( 'wp_footer', 'designubec_jquery');
+
+
+/**
  * Enqueue scripts and styles.
  */
 function designubec_scripts() {
 	wp_enqueue_style( 'designubec-style', get_stylesheet_uri() );
+    
+    wp_enqueue_style( 'designubec-bootstrap-style', get_template_directory_uri() . '/css/main.css' );
 
-	wp_enqueue_script( 'designubec-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	wp_enqueue_script( 'designubec-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+    wp_enqueue_script('designubec-bootstrap-script', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '3.1.1', true  );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -123,3 +189,9 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Boostrap navigation walker
+ */
+require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+

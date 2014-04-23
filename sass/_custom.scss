@@ -3,36 +3,38 @@ body {
 	background-size: cover;
 }
 
-.site-header {
-	@include make-row();
+.site-branding {
+	@include clearfix();
+	border-bottom: 2px solid $white;
 }
 
 .site-title {
-	@include make-lg-column(8);
-}
-
-.site-description {
-	
-}
-
-
-
-.wrapper, .page-header {
-  	@include make-row();
-}
-
-.logo {
-	@include make-lg-column(8);
 	img {
 		display: inline-block;
-	}
-	small {
-		color: $white;
 	}
 }
 
 .social-links {
-	
+	margin-top: 60px;
+	> li {
+		display: inline-block;
+		padding: 0 $padding-small-horizontal;
+	}
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.navbar-default {
+	background: none;
+	border: none;
+	border-bottom: 2px solid $white;
+	border-radius: 0;
+	a {
+		font-size: $font-size-large;
+		font-weight: bold;
+	}
 }
 
 
