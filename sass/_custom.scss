@@ -1,11 +1,12 @@
 body {
-	background: image-url("bg_designubec.png") no-repeat center center fixed;
+	background: #00abca;
 	background-size: cover;
 }
 
 .site-branding {
 	@include clearfix();
-	border-bottom: 2px solid $white;
+	// border-bottom: 2px solid $white;
+	text-align: center;
 }
 
 .site-title {
@@ -27,14 +28,38 @@ body {
 }
 
 .navbar-default {
-	background: none;
+	background: rgba(0, 0, 0, 0.4);
 	border: none;
-	border-bottom: 2px solid $white;
+	// border-bottom: 2px solid $white;
 	border-radius: 0;
 	a {
 		font-size: $font-size-large;
-		font-weight: bold;
+		text-shadow: 0 1px 2px #191A1B, 0 1px 0px #191A1B;
+		text-transform: uppercase;
+	}
+}
+
+.navbar-brand {
+	padding: 5px 15px;
+}
+
+.jumbotron {
+	text-align: center;
+	h1 {
+		font-weight: bolder;
+		text-transform: uppercase;
 	}
 }
 
 
+.site-info {
+	text-align: center;
+	a {
+		color: $white;
+		text-transform: uppercase;
+		vertical-align: middle;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

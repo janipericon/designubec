@@ -44,6 +44,7 @@ $body-bg:               #d9b998;
 //## Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:  "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $font-family-sans-serif:  "bm_germara12", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 //* Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -332,11 +333,11 @@ $border-radius-small:       3px;
 //$navbar-default-border:            darken($navbar-default-bg, 6.5%);
 
 // Navbar links
-$navbar-default-link-color:                #cc1c2e;
+$navbar-default-link-color:                #fff;
 $navbar-default-link-hover-color:          #fff;
 //$navbar-default-link-hover-bg:             transparent;
 $navbar-default-link-active-color:         #cc1c2e;
-$navbar-default-link-active-bg:            #fff;
+$navbar-default-link-active-bg:            transparent;
 //$navbar-default-link-disabled-color:       #ccc;
 //$navbar-default-link-disabled-bg:          transparent;
 
@@ -445,9 +446,9 @@ $navbar-default-link-active-bg:            #fff;
 //##
 
 //$jumbotron-padding:              30px;
-//$jumbotron-color:                inherit;
-//$jumbotron-bg:                   $gray-lighter;
-//$jumbotron-heading-color:        inherit;
+$jumbotron-color:                $white;
+$jumbotron-bg:                   transparent;
+$jumbotron-heading-color:        $white;
 //$jumbotron-font-size:            ceil(($font-size-base * 1.5));
 
 //== Form states and alerts

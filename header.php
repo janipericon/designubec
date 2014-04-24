@@ -27,18 +27,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site container">
+<div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title pull-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/img/designubec_logo.png" class="img-responsive" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>	" /></a></h1>
-			<ul class="social-links pull-right">
-	          <li><a href="https://www.facebook.com/designubec"><i class="fa fa-facebook fa-2x"></i></a></li>
-	          <li><a href="#"><i class="fa fa-twitter fa-2x"></i></a></li>
-	        </ul>
-		</div>
 		<nav id="site-navigation" class="navbar navbar-default main-navigation" role="navigation">
-			<div class="container">
 				 <div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				        <span class="sr-only">Toggle navigation</span>
@@ -46,22 +38,33 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				     </button>
+				     <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/img/designubec_icon.png" class="img-responsive" style="height:40px" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>	" /></a>
 				 </div>
-				 <?php
-		            wp_nav_menu( array(
-		                'menu'              => 'primary',
-		                'theme_location'    => 'primary',
-		                'depth'             => 2,
-		                'container'         => 'div',
-		                'container_class'   => 'collapse navbar-collapse',
-		        		'container_id'      => 'bs-example-navbar-collapse-1',
-		                'menu_class'        => 'nav navbar-nav',
-		                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-		                'walker'            => new wp_bootstrap_navwalker())
-		            );
-		        ?>
-			</div>
+				 <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+					 <?php
+			            wp_nav_menu( array(
+			                'menu'              => 'primary',
+			                'theme_location'    => 'primary',
+			                'depth'             => 2,
+			                'container'         => false,
+			                'menu_class'        => 'nav navbar-nav',
+			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			                'walker'            => new wp_bootstrap_navwalker())
+			            );
+			        ?>
+			        <?php
+			            wp_nav_menu( array(
+			                'menu'              => 'secondary',
+			                'theme_location'    => 'secondary',
+			                'depth'             => 1,
+			                'container'         => false,
+			                'menu_class'        => 'nav navbar-nav navbar-right',
+			                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			                'walker'            => new wp_bootstrap_navwalker())
+			            );
+			        ?>
+			     </div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-	<div id="content" class="site-content">
+	<div id="content" class="site-content container">
