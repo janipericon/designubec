@@ -20,7 +20,7 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <?php wp_head(); ?>
 <script type="text/javascript" src="//use.typekit.net/sht2zpt.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -38,7 +38,7 @@
 				        <span class="icon-bar"></span>
 				        <span class="icon-bar"></span>
 				     </button>
-				     <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/img/designubec_icon.png" class="img-responsive" style="height:40px" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>	" /></a>
+				     <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php bloginfo('template_url'); ?>/img/designubec_icon.png" class="img-responsive" style="height:30px" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>	" /></a>
 				 </div>
 				 <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
 					 <?php

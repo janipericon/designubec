@@ -28,7 +28,7 @@ body {
 }
 
 .navbar-default {
-	background: rgba(0, 0, 0, 0.4);
+	background: #fff;
 	border: none;
 	// border-bottom: 2px solid $white;
 	border-radius: 0;
@@ -40,16 +40,192 @@ body {
 }
 
 .navbar-brand {
-	padding: 5px 15px;
+	padding: 10px 15px;
+}
+
+.content-area-home {
+	font-family:'bm_germara12', Arial, sans-serif;
+}
+
+.event-info {
+	 text-align: right; 
+	 padding-top: 30px; 
+	 color: $white; 
+	 font-size: 22px;
+	 span {
+	 	font-size: 26px;
+	 	display: block;
+	 }
 }
 
 .jumbotron {
 	text-align: center;
+	padding-top: 20px; 
+	position: relative;
+	background: none;
 	h1 {
 		font-weight: bolder;
 		text-transform: uppercase;
 	}
+	.cloud {
+		position: absolute;
+	}
+	.cloud1 {
+		top: 0;
+		right: 0;
+		-webkit-animation-duration: 160s;
+		-webkit-animation-name: cloudone;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 160s;
+		animation-name: cloudone;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.cloud2 {
+		top: 90px;
+		right: 100%;
+		opacity: 0;
+		-webkit-animation-duration: 100s;
+		-webkit-animation-name: cloudtwo;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: 1;
+		animation-duration: 100s;
+		animation-name: cloudtwo;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+
+	.cloud3 {
+		top: 300px;
+		right: 100%;
+		opacity: 0;
+		-webkit-animation-duration: 90s;
+		-webkit-animation-name: cloudthree;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: 1;
+		animation-duration: 90s;
+		animation-name: cloudthree;
+		animation-timing-function: linear;
+		animation-iteration-count: 1;
+	}
+
+	.cloud4 {
+		top: 150px;
+		right: 0;
+		-webkit-animation-duration: 260s;
+		-webkit-animation-name: cloudfour;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 260s;
+		animation-name: cloudfour;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.cloud5 {
+		top: 30px;
+		right: 0;
+		-webkit-animation-duration: 130s;
+		-webkit-animation-name: cloudfive;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 130s;
+		animation-name: cloudfive;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.cloud6 {
+		top: 270px;
+		right: 0;
+		-webkit-animation-duration: 360s;
+		-webkit-animation-name: cloudsix;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 360s;
+		animation-name: cloudsix;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.seawater {
+		position: absolute;
+	}
+
+	.water1 {
+		bottom:20px;
+		left: 30%;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-name: waterone;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;	
+		animation-duration: 2s;
+		animation-name: waterone;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.water2 {
+		top:0px;
+		left: 43%;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-name: watertwo;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 5s;
+		animation-name: watertwo;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.water3 {
+		top:-20px;
+		left: 58%;
+		-webkit-animation-duration: 3s;
+		-webkit-animation-name: waterthree;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-duration: 3s;
+		animation-name: waterthree;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
+	.whale {
+		position: absolute;
+		bottom: 90px;
+		left: 470px;
+		-webkit-transform:rotate(-45deg);
+		-webkit-animation-duration: 15s;
+		-webkit-animation-name: butanding;
+		-webkit-animation-timing-function: linear;
+		-webkit-animation-iteration-count: infinite;	
+		transform:rotate(-45deg);
+		animation-duration: 15s;
+		animation-name: butanding;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
 }
+
+.group-list {
+	position: absolute; 
+}
+
+.group-left {
+	left: 0; 
+	text-align: left; 
+	top: 90px;
+}
+
+.group-right {
+	position: absolute; 
+	right:0; 
+	top: 70px;
+}
+
 
 
 .site-info {
@@ -63,3 +239,539 @@ body {
 		}
 	}
 }
+
+/* Animation Keyframes */
+@-webkit-keyframes cloudone {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0.8;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes cloudone {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0.8;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cloudtwo {
+	from {
+		right: 50%;
+		opacity: 1;
+	}
+
+	20% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	40% {
+		right: 70%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 80%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 90%;
+		opacity: 1;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0.0;
+	}
+}
+
+@keyframes cloudtwo {
+	from {
+		right: 50%;
+		opacity: 1;
+	}
+
+	20% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	40% {
+		right: 70%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 80%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 90%;
+		opacity: 1;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0.0;
+	}
+}
+
+@-webkit-keyframes cloudthree {
+	from {
+		right: 40%;
+		opacity: 1;
+	}
+
+	20% {
+		right: 50%;
+		opacity: 1;
+	}
+
+	40% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 70%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 1;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0.0;
+	}
+}
+
+@keyframes cloudthree {
+	from {
+		right: 40%;
+		opacity: 1;
+	}
+
+	20% {
+		right: 50%;
+		opacity: 1;
+	}
+
+	40% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 70%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 1;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0.0;
+	}
+}
+
+@-webkit-keyframes cloudfour {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0.8;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes cloudfour {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0.8;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+
+@-webkit-keyframes cloudfive {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+
+
+@keyframes cloudfive {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes cloudsix {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes cloudsix {
+	from {
+		right: 0;
+		opacity: 0;
+	}
+
+	20% {
+		right: 20%;
+		opacity: 0;
+	}
+
+	40% {
+		right: 40%;
+		opacity: 1;
+	}
+
+	60% {
+		right: 60%;
+		opacity: 1;
+	}
+
+	80% {
+		right: 80%;
+		opacity: 0.8;
+	}
+
+	to {
+		right: 100%;
+		opacity: 0;
+	}
+}
+
+
+@-webkit-keyframes waterone {
+	from {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+
+@keyframes waterone {
+	from {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes watertwo {
+	from {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes watertwo {
+	from {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes waterthree {
+	from {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes waterthree {
+	from {
+		opacity: 0;
+	}
+
+	40% {
+		opacity: 1;
+	}
+
+	80% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes butanding {
+	from {
+		transform:rotate(-45deg);
+		opacity: 1;
+	}
+
+	40% {
+		bottom: 60px;
+		left: 430px;
+		opacity: 0.8;
+	}
+
+	80% {
+		transform:rotate(120deg);
+		opacity: 0.4;
+	}
+
+	to {
+		bottom: 90px;
+		left: 470px;
+		opacity: 1;
+	}
+}
+
+
+@keyframes butanding {
+	from {
+		transform:rotate(-45deg);
+		opacity: 1;
+	}
+
+	40% {
+		bottom: 60px;
+		left: 430px;
+		opacity: 0.8;
+	}
+
+	80% {
+		transform:rotate(120deg);
+		opacity: 0.4;
+	}
+
+	to {
+		bottom: 90px;
+		left: 470px;
+		opacity: 1;
+	}
+}
+
+
+
+
+
