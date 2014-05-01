@@ -333,11 +333,11 @@ $border-radius-small:       3px;
 //$navbar-default-border:            darken($navbar-default-bg, 6.5%);
 
 // Navbar links
-$navbar-default-link-color:                #fff;
+$navbar-default-link-color:                #bf2121;
 $navbar-default-link-hover-color:          #fff;
-//$navbar-default-link-hover-bg:             transparent;
-$navbar-default-link-active-color:         #cc1c2e;
-$navbar-default-link-active-bg:            transparent;
+$navbar-default-link-hover-bg:             #bf2121;
+$navbar-default-link-active-color:         #fff;
+$navbar-default-link-active-bg:            #bf2121;
 //$navbar-default-link-disabled-color:       #ccc;
 //$navbar-default-link-disabled-bg:          transparent;
 
