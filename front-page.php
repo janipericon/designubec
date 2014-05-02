@@ -5,9 +5,25 @@ Template Name: Home Page
 get_header(); ?>
 	<div id="primary" class="content-area content-area-home">
 		<main id="main" class="site-main" role="main">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php 
+				$args = array(
+					'post_type' => 'designubec_events',
+					'posts_per_page' => 1
+				);
+
+				$query = new WP_Query($args);
+
+			?>
+			<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 				<header class="site-branding">
-					<h1 class="site-title pull-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php bloginfo('template_url'); ?>/img/designubec2014logo.png" class="img-responsive" style="width:300px" alt="<?php bloginfo( 'name' ); ?>" title="<?php bloginfo( 'name' ); ?>	" /></a></h1>
+					<?php
+						$logo_image = get_field('event_logo');
+ 					?>
+					<h1 class="site-title pull-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php if (!empty($logo_image)) : ?>
+							<img src="<?php echo $logo_image['url']; ?>" class="img-responsive event_logo" alt="<?php echo $logo_image['alt']; ?>" title="<?php echo $logo_image['alt']; ?>" />
+						<?php endif; ?>
+					</a></h1>
 					<div class="event-info pull-right">
 			       		<p><span>8PM May 24, 2014</span> Handuraw Pizza Cafe Lahug Gorordo Avenue, Cebu City</p>
 					</div>
@@ -59,6 +75,4 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>
