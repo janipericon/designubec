@@ -12,6 +12,7 @@ body {
 .site-title {
 	img {
 		display: inline-block;
+		width: 300px;
 	}
 }
 
@@ -210,6 +211,9 @@ body {
 
 .group-list {
 	position: absolute; 
+	a {
+		color: $white;
+	}
 }
 
 .group-left {

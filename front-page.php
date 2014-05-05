@@ -25,7 +25,8 @@ get_header(); ?>
 						<?php endif; ?>
 					</a></h1>
 					<div class="event-info pull-right">
-			       		<p><span>8PM May 24, 2014</span> Handuraw Pizza Cafe Lahug Gorordo Avenue, Cebu City</p>
+						<?php $date = DateTime::createFromFormat('Ymd', get_field('event_date')); ?>
+			       		<p><span><?php echo get_field('event_time'); ?> <?php echo $date->format('d M Y'); ?></span> <?php echo get_field('event_place'); ?></p>
 					</div>
 					<!-- <ul class="social-links pull-right">
 			          <li><a href="https://www.facebook.com/designubec"><i class="fa fa-facebook fa-2x"></i></a></li>
@@ -33,31 +34,34 @@ get_header(); ?>
 			        </ul> -->
 				</header>
 				<section class="jumbotron">
+					<?php 
+						$countlist = 0; 
+						$artist_group_one = "";
+						$artist_group_two = "";
+
+						if(have_rows('artists_designer')) {
+							while(have_rows('artists_designer')) : the_row();
+								if($countlist <= 11) {
+									$artist_group_one .= "<li><a href='". get_sub_field('artist_url') . "'>". get_sub_field('artist_name') ."</a></li>";
+								} else {
+									$artist_group_two .= "<li><a href='". get_sub_field('artist_url') . "'>". get_sub_field('artist_name') ."</a></li>";
+								}
+								$countlist++;
+							endwhile;
+						}
+
+					?>
 					<div class="group-list group-left">
 						<ul style="list-style-type:none; text-align:left; font-size:34px; margin:0; padding:0;">
-			        		<li>karl</li>
-			        		<li>ton inton</li>
-			        		<li>nicolo nimor</li>
-			        		<li>geraldine sy</li>
-			        		<li>anthony aves</li>
-			        		<li>chadmanzo</li>
-			        		<li>francis bitamor</li>
-			        		<li>aya jugalbot</li>
+			        		<?php echo $artist_group_one; ?>
 			        	</ul>
 			    	</div>
-			        <img src="<?php bloginfo('template_url'); ?>/img/designubec2014map.png" style="height:600px;" alt="Designubec" title="Desginubec" />
 			        <div class="group-list group-right">
 			        	<ul style="list-style-type:none; text-align:right; font-size:34px;">
-			        		<li>marc abuan</li>
-			        		<li>kat bacasmas</li>
-			        		<li>edzel rubite</li>
-			        		<li>alwin aves</li>
-			        		<li>lou patrick mackay</li>
-			        		<li>misterjude crisostomo</li>
-			        		<li>michele liza kaiser-pelayre</li>
-			        		<li>ed louie</li>
+			        		<?php echo $artist_group_two; ?>
 			        	</ul>
 			    	</div>
+			    	<img src="<?php bloginfo('template_url'); ?>/img/designubec2014map.png" style="height:600px;" alt="Designubec" title="Desginubec" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud1.png" class="cloud cloud1" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud2.png" class="cloud cloud2" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud3.png" class="cloud cloud3" />
