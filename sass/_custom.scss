@@ -228,7 +228,35 @@ body {
 	top: 70px;
 }
 
+.entry-header {
+	color: $white;
+	.entry-title {
+		font-size: $font-size-h1;
+		margin-bottom: 0;
+		a {
+			font-weight: bold;
+			color: $white;
+			text-transform: uppercase;
+		}
+	}
+}
 
+.entry-meta {
+	padding-bottom: 20px;
+	a {
+		color: $white;
+	}
+}
+
+.entry-content {
+	color: $white;
+}
+
+.entry-footer {
+	a {
+		color: $white;
+	}
+}
 
 .site-info {
 	text-align: center;

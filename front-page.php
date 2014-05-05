@@ -18,6 +18,7 @@ get_header(); ?>
 				<header class="site-branding">
 					<?php
 						$logo_image = get_field('event_logo');
+						$map_image = get_field('cebu_image');
  					?>
 					<h1 class="site-title pull-left"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 						<?php if (!empty($logo_image)) : ?>
@@ -61,7 +62,7 @@ get_header(); ?>
 			        		<?php echo $artist_group_two; ?>
 			        	</ul>
 			    	</div>
-			    	<img src="<?php bloginfo('template_url'); ?>/img/designubec2014map.png" style="height:600px;" alt="Designubec" title="Desginubec" />
+			    	<img src="<?php echo $map_image['url']; ?>" style="height:600px;" alt="<?php echo $map_image['alt']; ?>" title="<?php $map_image['title']; ?>" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud1.png" class="cloud cloud1" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud2.png" class="cloud cloud2" />
 			    	<img src="<?php bloginfo('template_url'); ?>/img/cloud3.png" class="cloud cloud3" />
@@ -72,6 +73,7 @@ get_header(); ?>
 			    	<img src="<?php bloginfo('template_url'); ?>/img/waterone.png" class="seawater water1" />
 					<img src="<?php bloginfo('template_url'); ?>/img/watertwo.png" class="seawater water2" />
 					<img src="<?php bloginfo('template_url'); ?>/img/waterthree.png" class="seawater water3" />
+			    	<?php the_content(); ?>
 			    </section>
 				<?php //get_template_part( 'content', 'page' ); ?>
 

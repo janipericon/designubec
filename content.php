@@ -55,9 +55,9 @@
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'designubec' ), __( '1 Comment', 'designubec' ), __( '% Comments', 'designubec' ) ); ?></span>
+		<span class="comments-link"> <?php comments_popup_link( __( '<i class="fa fa-comment"></i> Leave a comment', 'designubec' ), __( '<i class="fa fa-comment"></i> 1', 'designubec' ), __( '<i class="fa fa-comment"></i> %', 'designubec' ) ); ?></span>
 		<?php endif; ?>
 
-		<?php edit_post_link( __( 'Edit', 'designubec' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '<i class="fa fa-edit"></i> Edit', 'designubec' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
