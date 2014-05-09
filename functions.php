@@ -165,6 +165,28 @@ function designubec_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'designubec_scripts' );
 
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/designubec_icon.png);
+            padding-bottom: 10px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Designubec Cebu Art + Design Exhibit';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+
 /**
  * Implement the Custom Header feature.
  */

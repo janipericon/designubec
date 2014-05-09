@@ -42,7 +42,7 @@ body {
 	padding: 10px 15px;
 }
 
-.content-area-home {
+.content-area-home, .footer-front {
 	font-family:'bm_germara12', Arial, sans-serif;
 }
 
@@ -68,6 +68,7 @@ body {
 	}
 	.cloud {
 		position: absolute;
+		z-index: 10;
 	}
 	.cloud1 {
 		top: 0;
@@ -151,6 +152,7 @@ body {
 
 	.seawater {
 		position: absolute;
+		z-index: 9;
 	}
 
 	.water1 {
@@ -210,10 +212,21 @@ body {
 }
 
 .group-list {
-	position: absolute; 
+	position: absolute;
+	z-index: 1000; 
 	a {
 		color: $white;
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+		outline: none;
+		&:hover {
+			text-decoration: none;
+			color: #ffe8a7;
+			font-size: 40px;
+			text-shadow: 1px 2px 3px rgba(158,116,52,0.8);
+		}
 	}
+
 }
 
 .group-left {
@@ -225,14 +238,14 @@ body {
 .group-right {
 	position: absolute; 
 	right:0; 
-	top: 70px;
+	top: 90px;
 }
 
 .entry-header {
 	color: $white;
 	.entry-title {
 		font-size: $font-size-h1;
-		margin-bottom: 0;
+		margin-bottom: 50px;
 		a {
 			font-weight: bold;
 			color: $white;
@@ -250,6 +263,9 @@ body {
 
 .entry-content {
 	color: $white;
+	p {
+		line-height: 24px;
+	}
 }
 
 .entry-footer {
@@ -267,6 +283,30 @@ body {
 		&:hover {
 			text-decoration: none;
 		}
+	}
+}
+
+.site-footer {
+	color: $white;
+	ul {
+		list-style-type: none;
+		text-align: center;
+		li {
+			display: inline-block;
+			text-align: center;
+			vertical-align: top;
+		}
+		img {
+			width: 150px;
+			padding: 0 10px;
+			outline: none;
+		}
+		a {
+			outline: none;
+		}
+	}
+	.facebook-like {
+		padding: 20px 0;
 	}
 }
 

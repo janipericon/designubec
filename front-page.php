@@ -42,10 +42,10 @@ get_header(); ?>
 
 						if(have_rows('artists_designer')) {
 							while(have_rows('artists_designer')) : the_row();
-								if($countlist <= 11) {
-									$artist_group_one .= "<li><a href='". get_sub_field('artist_url') . "'>". get_sub_field('artist_name') ."</a></li>";
+								if($countlist <= 10) {
+									$artist_group_one .= "<li><a href='". get_sub_field('artist_url') . "' target='_blank' >". get_sub_field('artist_name') ."</a></li>";
 								} else {
-									$artist_group_two .= "<li><a href='". get_sub_field('artist_url') . "'>". get_sub_field('artist_name') ."</a></li>";
+									$artist_group_two .= "<li><a href='". get_sub_field('artist_url') . "' target='_blank'>". get_sub_field('artist_name') ."</a></li>";
 								}
 								$countlist++;
 							endwhile;
@@ -81,4 +81,4 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_footer(); ?>
+<?php get_footer('front'); ?>

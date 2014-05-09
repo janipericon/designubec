@@ -21,6 +21,11 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+<!-- Facebook Metadata /-->
+<meta property="fb:page_id" content="" />
+<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/designubec_icon.png" />
+<meta property="og:description" content="Cebu Art and Design Exhibit"/>
+<meta property="og:title" content="Designubec Cebu Art + Design Exhibit"/>
 <?php wp_head(); ?>
 <script type="text/javascript" src="//use.typekit.net/sht2zpt.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
